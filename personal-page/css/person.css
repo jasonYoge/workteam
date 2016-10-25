@@ -146,7 +146,6 @@ header .header-container .header-content-right p {
 }
 
 .container .detail li .intro div {
-	font-size: 150%;
 	border: 5px solid white;
 	position: absolute;
 	width: 2em;
@@ -160,11 +159,19 @@ header .header-container .header-content-right p {
 	text-align: center;
 	cursor: pointer;
 	transition: transform .5s ease;
+	box-sizing: content-box;
+}
+
+.container .detail li .intro div span {
+	width: 100%;
+	line-height: 100%;
+	font-size: 110%;
+	/*display: block;*/
 }
 
 .container .detail li .intro div:hover {
 	transform: rotate(.5turn);
-	transform-origin: center;
+	/*transform-origin: center;*/
 }
 
 .container .detail li h3 {
