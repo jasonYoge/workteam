@@ -70,10 +70,16 @@ header .header-container .header-content-right p {
 }
 
 .container .sidebar {
-	width: 25%;
+	width: 250px;
 	background-color: #df4782;
 	margin-top: -6em;
 	float: left;
+}
+
+.container .sidebar.fixed {
+	position: fixed;
+	top: 0;
+	margin-top: 0;
 }
 
 .container .sidebar h2 {
@@ -99,8 +105,12 @@ header .header-container .header-content-right p {
 }
 
 .container .detail {
-	width: 75%;
+	width: 750px;
 	float: left;
+}
+
+.container .detail.fixed {
+	margin-left: 250px;
 }
 
 .container .detail h2 {
@@ -124,7 +134,6 @@ header .header-container .header-content-right p {
 	box-shadow: 1px 1px 1px 2px #ccc;
 	overflow: hidden;
 	position: relative;
-	padding-bottom: 2em;
 }
 
 .container .detail li:not(:nth-child(3n-2)) {
@@ -138,40 +147,52 @@ header .header-container .header-content-right p {
 }
 
 .container .detail li .intro {
+	position: relative;
+}
+
+.container .detail li .intro div {
+	font-size: 150%;
+	border: 5px solid white;
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(135, 206, 255, .5);
-	transition: all .5s ease;
+	width: 2em;
+	line-height: 2em;
+	background-color: #7901FB;
+	top: calc(0px - 1em - 5px);
+	right: .3em;
+	border-radius: 50%;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	cursor: pointer;
+	transition: transform .5s ease;
 }
 
-.container .detail li:hover {
-
-}
-
-.container .detail li:hover .intro {
-	bottom: calc(100% - 4em);
-}
-
-.container .detail li:hover .intro h3 {
-	line-height: 4em;
-}
-
-.container .detail li:hover .intro p {
-	white-space: pre-wrap;
-	overflow: visible;
+.container .detail li .intro div:hover {
+	transform: rotate(.5turn);
+	transform-origin: center;
 }
 
 .container .detail li h3 {
-	padding: 0 .5em;
+	padding: .5em;
 	color: #333;
 }
 
-.container .detail li p {
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
+.container .detail li > p {
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	background-color: rgba(155, 23, 145, .5);
+	color: #333;
 	padding: .5em;
+	transition: transform .5s ease;
+	transform-origin: 80% 80%;
+	transform: scale(0);
+	box-sizing: border-box;
+	overflow-y: auto;
+	word-wrap: break-word;
+}
+
+.container .detail li > p.active {
+	transform: scale(1);
 }
 
 footer {
