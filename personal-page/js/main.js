@@ -15,8 +15,9 @@ require(['jquery'], function ($) {
 	var $window = $(window),
 		$list = $('.sidebar'),
 		offsetTop = $list.offset().top;
+
 	$window.scroll(function () {
-		if ($window.scrollTop() >= offsetTop) {
+		if ($window.scrollTop() >= offsetTop && $window.width() > 1000) {
 			$list.addClass('fixed')
 			.next().addClass('fixed');
 		} else {

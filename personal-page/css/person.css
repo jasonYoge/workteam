@@ -1,6 +1,5 @@
 body {
 	background: #eee;
-	-webkit-scrollbar{}
 }
 
 ::-webkit-scrollbar {
@@ -18,7 +17,6 @@ body {
 
 body > header {
 	width: 100%;
-	min-height: 444px;
 	background-image: url('../img/header.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -50,9 +48,6 @@ h3 {
 header .header-container .header-content {
 	position: absolute;
 	color: #333;
-}
-
-header .header-container .header-content-right {
 	width: 40%;
 	right: 0px;
 	bottom: 0px;
@@ -202,4 +197,79 @@ footer {
 	line-height: 3em;
 	color: white;
 	background-color: #333;
+}
+
+@media (max-width: 1000px) {
+	html, body {
+		font-size: 3vw;
+	}
+
+	body > header {
+		width: 100%;
+	}
+
+	header .header-container {
+		width: inherit;
+		height: 28rem;
+	}
+
+	header .header-container .header-content {
+		position: relative;
+		width: 100%;
+		height: auto;
+		padding: 4em;
+		box-sizing: border-box;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	.sidebar {
+		display: none;
+	}
+
+	.container .detail {
+		width: 100%;
+	}
+
+	.container .detail h2 {
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.container .detail ul {
+		width: 100%;
+		padding: 0px 0px;
+	}
+
+	.container .detail li {
+		width: 100%;
+		margin: 0px;
+	}
+
+	.container .detail li:not(:nth-child(3n-2)) {
+		margin-left: 0px;
+	}
+
+	.container .detail li .intro div {
+		display: none;
+	}
+
+	.container .detail li .img {
+		width: 50%;
+		float: left;
+		height: auto;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.container .detail li > p {
+		transform: scale(1);
+		background: transparent;
+		position: relative;
+	}
 }
