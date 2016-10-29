@@ -24,5 +24,12 @@ require(['jquery'], function ($) {
 			$list.removeClass('fixed')
 			.next().removeClass('fixed');
 		}
-	})
+	});
+
+	$window.resize(function () {
+		if ($window.width() <= 1000) {
+			$list.removeClass('fixed')
+			.next().removeClass('fixed');
+		}
+	});
 });
